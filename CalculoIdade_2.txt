@@ -1,0 +1,96 @@
+package CalculoIdade;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Calendar;
+
+@WebServlet("/CalculoIdade")
+public class CalculoIdade extends HttpServlet {
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+public class CalculoIdade {
+ Calendar calendar = Calendar.getInstance();
+
+	int diaAtual = calendar.get(Calendar.DAY_OF_MONTH);
+
+	int mesAtual = calendar.get(Calendar.MONTH);
+
+	int anoAtual = calendar.get(Calendar.YEAR);
+
+	
+Integer diaNasc = Int.parseInt(request.gatParameter("dia"));
+
+	
+Integer mesNasc = Int.parseInt(request.gatParameter("mes"));
+
+
+Integer anoNasc = Int.parseInt(request.gatParameter("ano"));
+
+
+	
+	int idade = anoAtual - anoNasc;
+
+	
+	if (diaNasc <1) && (diaNasc > 31) {
+
+	    	System.out.print ("Dia inválido!");
+
+	    	
+	}
+ else if(mesNasc < 1) && (mesNasc > 12) {
+
+	  
+	    System.out.print ("Mês inválido!");
+
+	    
+	} else if (mesAtual > mesNasc) {
+
+	    
+	    idade --;
+
+	    
+	} else if (diaAtual > diaNasc) {
+
+	    
+	    idade--;
+	    
+	}
+
+        System.out.print ("Idade: " + idade);
+     }
+     
+ public String Regras() {
+         if (anoNasc > anoAtual) && (anoNasc <= 1900 )
+         System.out.print ("Não é permitido anos menores que 1900!")
+     }
+}
+
+}
+
+
+=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=
+
+
+HTML
+
+
+<html>
+ <head>
+  <title>Calcular Idade</title>
+ </head>
+ <body bgcolor="Brown"> 
+  <form method = "post" action = "http://localhost:8080/fj21-agenda/CalculoIdade">
+   <h2 style="font-family:verdana">DIGITE A SUA DATA DE NASCIMENTO AQUI</h2>
+   <input type = "submit" value = "Calcular" />
+   </form>
+  </div>
+ </body>
+</html>
+
