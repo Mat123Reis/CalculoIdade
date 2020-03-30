@@ -110,8 +110,8 @@ JSP
 	<body bgcolor="Brown">
 		<form>
     		<h2 style="font-family:verdana">SUA IDADE É: </h2>
-		<input type="text" size = "10" value = "<%= request.getAttribute("idade") %>">
-		<input type="text" size = "50" value = "<%= request.getAttribute("resultado") %>">
+		<input type="text" size = "15" value = "<%= request.getAttribute("idade") %>">
+		<input type="text" size = "40" value = "<%= request.getAttribute("resultado") %>">
 		</form>
 	</body>
 </html>
