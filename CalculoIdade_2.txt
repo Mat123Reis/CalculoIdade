@@ -40,14 +40,14 @@ Integer anoNasc = Int.parseInt(request.gatParameter("ano"));
 	
 	if (diaNasc <1) && (diaNasc > 31) {
 
-	    	System.out.print ("Dia inv·lido!");
+	    	System.out.print ("Dia inv√°lido!");
 
 	    	
 	}
  else if(mesNasc < 1) && (mesNasc > 12) {
 
 	  
-	    System.out.print ("MÍs inv·lido!");
+	    System.out.print ("M√™s inv√°lido!");
 
 	    
 	} else if (mesAtual > mesNasc) {
@@ -68,7 +68,7 @@ Integer anoNasc = Int.parseInt(request.gatParameter("ano"));
      
  public String Regras() {
          if (anoNasc > anoAtual) && (anoNasc <= 1900 )
-         System.out.print ("N„o È permitido anos menores que 1900!")
+         System.out.print ("N√£o √© permitido anos menores que 1900!")
      }
 }
 
@@ -92,5 +92,27 @@ HTML
    </form>
   </div>
  </body>
+</html>
+
+=-=-=-=-=---=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+JSP
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calcular Idade</title>
+</head>
+	<body bgcolor="Brown">
+		<form>
+    		<h2 style="font-family:verdana">SUA IDADE √â: </h2>
+		<input type="text" size = "10" value = "<%= request.getAttribute("idade") %>">
+		<input type="text" size = "50" value = "<%= request.getAttribute("resultado") %>">
+		</form>
+	</body>
 </html>
 
